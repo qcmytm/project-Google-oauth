@@ -19,7 +19,8 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "/auth/google/redirect",
+      callbackURL:
+        "https://project-google-oauth.onrender.com/auth/google/redirect",
     },
     async (accessToken, refreshToken, profile, done) => {
       let foundUser = await ThisUser.findOne({ googleID: profile.id }).exec();
