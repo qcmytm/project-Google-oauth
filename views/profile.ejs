@@ -33,19 +33,17 @@
         <li>時間為：<%= user.date %></li>
       </ul>
     </section>
-
-
-    <div class="posts">
+    <div class="posts d-flex ">
      <% for(let i=0;i<posts.length;i++){ %>
-         <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title"><%= posts[i].title %> </h5>
-            <p class="card-text"><%- posts[i].content %></p>
+         <div class="card m-1" style="width: 18rem">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <div><h5 class="card-title"><%= posts[i].title %> </h5>
+            <p class="card-text"><%- posts[i].content %></p></div>
+            
             <a href="#" class="btn btn-primary"><%= posts[i].date %></a>         
           </div>
         </div>
       <% } %>
-      
-      </div>
+    </div>
   </body>
 </html>
