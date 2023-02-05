@@ -9,6 +9,7 @@ require("./config/passport");
 const session = require("express-session");
 const passport = require("passport");
 const flash = require("connect-flash");
+const PORT = process.env.PORT || 7070;
 
 //連結mongoDB
 mongoose
@@ -47,6 +48,6 @@ app.get("/", (req, res) => {
   res.render("index", { user: req.user });
 });
 
-app.listen(8080, () => {
-  console.log("Server running on port 8080.");
+app.listen(PORT, () => {
+  console.log("Server running on port" + PORT);
 });
